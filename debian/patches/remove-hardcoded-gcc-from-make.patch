@@ -1,0 +1,23 @@
+--- a/codec/Makefile
++++ b/codec/Makefile
+@@ -5,10 +5,10 @@
+ all: j2k_to_image image_to_j2k
+ 
+ j2k_to_image: j2k_to_image.c
+-	gcc $(CFLAGS) compat/getopt.c index.c convert.c j2k_to_image.c -o j2k_to_image -L.. -lopenjpeg -I ../libopenjpeg/ -lm -ltiff
++	$(CC) $(CFLAGS) compat/getopt.c index.c convert.c j2k_to_image.c -o j2k_to_image -L.. -lopenjpeg -I ../libopenjpeg/ -lm -ltiff
+ 
+ image_to_j2k: image_to_j2k.c
+-	gcc $(CFLAGS) compat/getopt.c index.c convert.c image_to_j2k.c -o image_to_j2k -L.. -lopenjpeg -I ../libopenjpeg/ -lm -ltiff
++	$(CC) $(CFLAGS) compat/getopt.c index.c convert.c image_to_j2k.c -o image_to_j2k -L.. -lopenjpeg -I ../libopenjpeg/ -lm -ltiff
+ 
+ clean:
+ 	rm -f j2k_to_image image_to_j2k
+--- a/indexer_JPIP/Makefile
++++ b/indexer_JPIP/Makefile
+@@ -1,5 +1,3 @@
+-CC = gcc
+-
+ CFLAGS = -Wall $(EXTRA_CFLAGS)
+ 
+ all: index_create

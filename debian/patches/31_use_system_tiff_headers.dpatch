@@ -1,0 +1,12 @@
+## DP: Use system tiff headers
+--- a/codec/convert.c
++++ b/codec/convert.c
+@@ -33,7 +33,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include "openjpeg.h"
+-#include "../libs/libtiff/tiffio.h"
++#include <tiffio.h>
+ #include "convert.h"
+ 
+ /*

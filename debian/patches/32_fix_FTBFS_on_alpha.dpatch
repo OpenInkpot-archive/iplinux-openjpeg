@@ -1,0 +1,12 @@
+## Fix FTBFS on alpha platforms.dpatch by Arthur Loiret <aloiret@debian.org>
+--- a/codec/dirent.h
++++ b/codec/dirent.h
+@@ -118,7 +118,7 @@
+ #   define HAVE_SYS_DIR_H
+ # elif defined(__hpux)                         /* HP-UX */
+ #   define HAVE_DIRENT_H
+-# elif defined(__alpha) || defined(__alpha__)  /* Alpha OSF1 */
++# elif defined(__osf__) || defined(__digital__)  /* Alpha OSF1 */
+ #   error "not implemented"
+ # elif defined(__sgi)                          /* Silicon Graphics */
+ #   define HAVE_DIRENT_H

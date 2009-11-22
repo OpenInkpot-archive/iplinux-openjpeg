@@ -1,0 +1,10 @@
+--- a/Makefile
++++ b/Makefile
+@@ -54,6 +54,7 @@
+ 
+ $(SHAREDLIB): $(MODULES)
+ 	$(CC) -shared -Wl,-soname,$(LIBNAME) -o $@ $(MODULES) -lm
++	ln -s $@ lib$(TARGET).so
+ 
+ install: OpenJPEG
+ 	install -d '$(DESTDIR)$(INSTALL_LIBDIR)' '$(DESTDIR)$(INSTALL_INCLUDE)'
